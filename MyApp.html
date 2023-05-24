@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>을지대학교</title>
+	<style>
+		h1 {
+			font-family:궁서체;
+			text-align: center;
+			margin-top:100px;
+		}
+		h2 {
+			text-align: center;
+			font-size:20px;
+			font-family:바탕체;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Contact</h1>
+	<h2>을지대학교 성남캠퍼스</h2>
+	<h2>주소: 경기도 성남시 수정구 산성대로 553</h2>
+	<h2>전화: 1899-0001</h2>
+	<div id="map" style="width:1000px;height:500px; margin:auto; margin-top:30px;"></div>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0c1e70c034c073366f845cbcce2b984a"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(37.460539, 127.164982),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+		map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+
+		// 마커가 표시될 위치
+		var markerPosition = new kakao.maps.LatLng(37.460539, 127.164982);
+
+		// 마커 생성
+		var marker = new kakao.maps.Marker({
+			position: markerPosition
+		});
+
+		// 마커가 지도 위에 표시되도록 설정
+		marker.setMap(map);
+		marker.setDraggable(true);
+
+		// 아래 코드는 지도 위의 마커를 제거하는 코드
+		// marker.setMap(null);
+	</script>
+</body>
+
+</html>
